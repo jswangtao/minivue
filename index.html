@@ -1,0 +1,44 @@
+<!--
+ * @Author: wangtao
+ * @Date: 2020-07-13 10:31:36
+ * @LastEditors: 汪滔
+ * @LastEditTime: 2022-05-11 08:07:00
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mini Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>{{ msg}}</h3>
+      <input type="text" v-model="msg" />
+    </div>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script> -->
+    <script src="./js/dep.js"></script>
+    <script src="./js/watcher.js"></script>
+    <script src="./js/compiler.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/vue.js"></script>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "Hello Vue",
+          count: 100,
+          person: { name: { a: { b: 1 } } },
+        },
+        methods: {
+          add() {
+            this.$data.person.sex = 222;
+            console.log("🚀🚀🚀wimi======>>>this", this.$data.person.sex);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
